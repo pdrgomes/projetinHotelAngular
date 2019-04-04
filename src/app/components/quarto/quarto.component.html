@@ -1,0 +1,34 @@
+<h3>QUARTOS</h3>
+<br>
+
+
+<mat-list>
+
+    <mat-list-item *ngFor="let quartoBuscaTodos of quartoArray">
+       <h5>ID {{quartoBuscaTodos.id}}</h5> 
+      <mat-divider></mat-divider>
+      <h4 mat-line (click)="selectQuarto(quarto)">{{quartoBuscaTodos.numQuarto}}</h4>
+      <mat-divider></mat-divider>
+      <p mat-line (click)="selectQuarto(quarto)"> {{quartoBuscaTodos.precoQuarto}}</p>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+  
+  </mat-list>
+
+  <form class="example-form">
+      <mat-form-field value="numQuarto" class="example-full-width">
+        <input matInput placeholder="Nome" name="insertNumQuarto" [(ngModel)]="quartoInserir.numQuarto">
+      </mat-form-field>
+      <mat-form-field value="valorServico" class="example-full-width">
+          <input matInput placeholder="Preço" name="insertPrecoQuarto" [(ngModel)]="quartoInserir.precoQuarto">
+        </mat-form-field>
+      <button mat-raised-button (click)="createQuarto()">Inserir/Alterar</button>
+    </form>
+
+
+    <form class="example-form">
+        <mat-form-field value="precoQuarto" class="example-full-width">
+            <input matInput placeholder="delete" name="insertPrecoQuarto" [(ngModel)]="selectedId">
+          </mat-form-field>
+        <button mat-raised-button (click)="deleteQuarto()">Delete</button>
+      </form>

@@ -1,0 +1,32 @@
+
+<h3>SERVIÇOS</h3>
+
+<mat-list>
+
+    <mat-list-item *ngFor="let servicoBuscaTodos of servicoArray">
+      <h5>ID {{servicoBuscaTodos.id}}</h5>
+      <mat-divider></mat-divider>
+      <h4 mat-line (click)="selectServico(servico)">{{servicoBuscaTodos.nomeServico}}</h4>
+      <mat-divider></mat-divider>
+      <p mat-line (click)="selectServico(servico)"> {{servicoBuscaTodos.precoServico}}</p>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+  
+  </mat-list>
+
+  <form class="example-form">
+      <mat-form-field value="nomeServico" class="example-full-width">
+        <input matInput placeholder="Nome" name="insertNomeServico" [(ngModel)]="servicoInserir.nomeServico">
+      </mat-form-field>
+      <mat-form-field value="valorServico" class="example-full-width">
+          <input matInput placeholder="Preço" name="insertPrecoServico" [(ngModel)]="servicoInserir.precoServico">
+        </mat-form-field>
+      <button mat-raised-button (click)="createServico()">Inserir/Alterar</button>
+    </form>
+
+    <form class="example-form">
+        <mat-form-field value="valorServico" class="example-full-width">
+            <input matInput placeholder="delete" name="insertPrecoServico" [(ngModel)]="selectedId">
+          </mat-form-field>
+        <button mat-raised-button (click)="deleteServico()">Delete</button>
+      </form>

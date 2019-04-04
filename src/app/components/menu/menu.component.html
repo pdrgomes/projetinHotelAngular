@@ -1,0 +1,26 @@
+
+<mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <h1 [routerLink]="['/']">ViaHotelFlow</h1>
+                <button mat-button [matMenuTriggerFor]="hospede">Hospede</button>
+                <mat-menu #hospede="matMenu">
+                                <button mat-menu-item [routerLink]="['/hospede']">hospede</button>
+                </mat-menu>
+                <button mat-button [matMenuTriggerFor]="quarto">Quarto</button>
+                <mat-menu #quarto="matMenu">
+                                <button mat-menu-item [routerLink]="['/quarto']">Quarto</button>
+                </mat-menu>
+                <button mat-button [matMenuTriggerFor]="servico">Servico</button>
+                <mat-menu #servico="matMenu">
+                                <button mat-menu-item [routerLink]="['/servico']">servico</button>
+                </mat-menu>
+
+                
+                
+        </mat-toolbar-row>
+      
+       
+      </mat-toolbar>
+
+
+      
